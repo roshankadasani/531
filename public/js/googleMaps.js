@@ -43,7 +43,7 @@ function init() {
         '<p>Latitude: ' + pos.lat + '</p>' +
         '<p>Longitude: ' + pos.lng + '</p>' +
         '<textarea id="textbox" rows=4 cols=39>Enter your message</textarea>' +
-        '<p><input class="btn btn-primary" type="submit" id="giantMess" onclick=sendInfo() value="Send To FBI" /></p>';
+        '<p><input class="btn btn-primary" type="submit" id="giantMess" onclick=sendInfo() value="Send To Agent" /></p>';
 
       infoWindow = new google.maps.InfoWindow({
         content: infoWindowContents
@@ -85,8 +85,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 // This is to separate the JS from HTML.
 function loadGoogleScript() {
   var myScript = document.createElement('script');
-  myScript.src = 'http://maps.googleapis.com/maps/api/js?key=AIzaSyADrwKJRMvavPmHNvE22wvcm28so-QWs94&callback=init'
-  // myScript.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyADrwKJRMvavPmHNvE22wvcm28so-QWs94&callback=initMap'
+  myScript.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyADrwKJRMvavPmHNvE22wvcm28so-QWs94&callback=init'
   document.body.appendChild(myScript);
 }
 
