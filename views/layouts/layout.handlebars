@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GeoTracker</title>
+  <link rel="icon" type="image/png" href="/img/map.png"/>
+  <link rel="stylesheet" type="text/css" href="/css/mapstyle.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/css/sticky-footer.css">
+</head>
+<body>
+  <!--- Header start --->
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>GeoTracker</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav" style="float: right">
+            {{#if user}}
+            <li><a href="/users/logout">Logout</a></li>
+            {{else}}
+            <li><a href="/users/login">User Login</a></li>
+            <li><a href="/users/adminlogin">Agent Login</a></li>
+            <li><a href="/users/register">Register</a></li>
+            {{/if}}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+  </header>
+  <!--- Header end --->
+  <!--- Main start --->
+  <main>
+    <div class="container-fluid">
+      {{{body}}}
+    </div>
+    <div class="container container-table">
+      <div class="row vertical-center-row">
+        <div class="text-center col-md-4 col-md-offset-4">
+          {{#if success_msg}}
+            <div class="alert alert-success" role="alert">{{success_msg}}</div>
+          {{/if}}
+          {{#if error_msg}}
+            <div class="alert alert-danger" role="alert">{{error_msg}}</div>
+          {{/if}}
+          {{#if error}}
+            <div class="alert alert-danger" role="alert">{{error}}</div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </main>
+  <!--- Main end --->
+  <!--- Footer Start --->
+  <footer class="footer">
+     <div class="container-fluid">
+       <h5 class="text-center">&copy; 2016 GeoTracker, Inc.</h5>
+     </div>
+  </footer>
+  <!--- Footer end --->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/googleMaps.js"></script>
+
+</body>
+</html>
