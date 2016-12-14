@@ -33,6 +33,10 @@ router.get('/admindash2', function(req, res){
 	res.render('admindash2');
 });
 
+router.get('/admindash3', function(req, res){
+	res.render('admindash3');
+});
+
 router.get('/sentlocations', function(req, res){
 	res.render('sentlocations');
 });
