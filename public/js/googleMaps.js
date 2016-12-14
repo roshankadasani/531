@@ -15,7 +15,7 @@ function init() {
 
   // Creates a new Google Map with default coords.
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -17.3952107, lng: 3.5691945},
+    center: {lat: -34.397, lng: 150.644},
     zoom: 16
   });
 
@@ -85,7 +85,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 // This is to separate the JS from HTML.
 function loadGoogleScript() {
   var myScript = document.createElement('script');
-  myScript.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyADrwKJRMvavPmHNvE22wvcm28so-QWs94&callback=init'
+  myScript.src = 'http://maps.googleapis.com/maps/api/js?key=AIzaSyADrwKJRMvavPmHNvE22wvcm28so-QWs94&callback=init'
   // myScript.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyADrwKJRMvavPmHNvE22wvcm28so-QWs94&callback=initMap'
   document.body.appendChild(myScript);
 }
