@@ -1,0 +1,28 @@
+<h1>Welcome Agent</h1>
+<div class="row">
+  <div class="col-md-2">
+    <a href="/users/admindash" class="btn btn-primary btn-block">Home</a>
+    <a href="/get-all-locations" class="btn btn-primary btn-block">Messages</a>
+    <a href="/users/admindash2" class="btn btn-primary btn-block">Analysis</a>
+  </div>
+  <div class="col-md-10">
+    <center>
+      <div id="main" style="overflow-y: auto;overflow-x: hidden;">
+        <table class="table table-bordered">
+          <tr>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Message</th>
+          </tr>
+          {{# each items }}
+          <tr>
+            <td>{{ this.location.lat}}</td>
+            <td>{{ this.location.lng}}</td>
+            <td>{{ this.location.message}}</td>
+          </tr>
+          {{/each}}
+        </table>
+      </div>
+    </center>
+  </div>
+</div>

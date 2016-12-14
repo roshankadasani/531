@@ -85,6 +85,13 @@ app.get('/get-location', function (req,res) {
   });
 });
 
+app.get('/get-all-locations', function (req,res) {
+  db.collection('locations').find().toArray(function (err, resultArray) {
+    if (err) return console.log(err);
+    res.render('admindash1', {items: resultArray});
+  });
+});
+
 var nodemailer = require('nodemailer');
 
 // create reusable transporter object using the default SMTP transport

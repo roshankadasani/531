@@ -25,6 +25,14 @@ router.get('/admindash', function(req, res){
 	res.render('admindash');
 });
 
+router.get('/admindash1', function(req, res){
+	res.render('admindash1');
+});
+
+router.get('/admindash2', function(req, res){
+	res.render('admindash2');
+});
+
 router.get('/sentlocations', function(req, res){
 	res.render('sentlocations');
 });
