@@ -15,7 +15,7 @@ function init() {
 
   // Creates a new Google Map with default coords.
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
+    center: {lat: -17.3952107, lng: 3.5691945},
     zoom: 16
   });
 
