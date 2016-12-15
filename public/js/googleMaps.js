@@ -1,12 +1,3 @@
-/*
-  Noe Rojas
-  Created October 14, 2016
-  Modified October 28, 2016
-  CPSC 476 Front End Web Engineering
-  This code was referenced from Google maps API:
-  https://developers.google.com/maps/documentation/javascript/geolocation
-*/
-
 // Global variable (JS object) to pass the users coordinates from JS generated HTML
 // to the server using the POST method at line
 var pos;
