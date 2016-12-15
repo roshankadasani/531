@@ -1,8 +1,8 @@
 <h1>Welcome Agent</h1>
 <div class="row">
   <div class="col-md-2">
-    <a href="/users/admindash" class="btn btn-primary btn-block">Home</a>
-    <a href="/users/admindash1" class="btn btn-primary btn-block">Marker</a>
+    <a href="/users/admindash1" class="btn btn-primary btn-block">Home</a>
+    <a href="/users/admindash" class="btn btn-primary btn-block">Other</a>
     <a href="/get-all-locations" class="btn btn-primary btn-block">Messages</a>
     <a href="/get-all-messages" class="btn btn-primary btn-block">Sentiment Analysis</a>
   </div>
@@ -29,7 +29,8 @@
 
        // This example uses a local copy of the GeoJSON stored at
        // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-       script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
+      //  script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
+       script.src = '/js/cityofchicago.geojson';
        document.getElementsByTagName('head')[0].appendChild(script);
 
        map.data.setStyle(function(feature) {

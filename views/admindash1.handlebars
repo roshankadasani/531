@@ -1,8 +1,8 @@
 <h1>Welcome Agent</h1>
 <div class="row">
   <div class="col-md-2">
-    <a href="/users/admindash" class="btn btn-primary btn-block">Home</a>
-    <a href="/users/admindash1" class="btn btn-primary btn-block">Marker</a>
+    <a href="/users/admindash1" class="btn btn-primary btn-block">Home</a>
+    <a href="/users/admindash" class="btn btn-primary btn-block">Other</a>
     <a href="/get-all-locations" class="btn btn-primary btn-block">Messages</a>
     <a href="/get-all-messages" class="btn btn-primary btn-block">Sentiment Analysis</a>
   </div>
@@ -12,6 +12,7 @@
         <div id="map"></div>
         <div id="drop-container"><div id="drop-silhouette"></div></div>
       </div>
+      <p>Drag and Drop <a href="/js/cityofchicago.geojson" target="_blank">GeoJSON Data</a></p>
     </center>
   </div>
 </div>
@@ -23,8 +24,8 @@
    function initMap() {
      // set up the map
      map = new google.maps.Map(document.getElementById('map'), {
-       center: {lat: 16.3945897, lng: 3.5968394},
-       zoom: 2
+       center: {lat: 41.8313456, lng: -87.6147461},
+       zoom: 11
      });
    }
 

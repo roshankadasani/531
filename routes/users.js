@@ -118,9 +118,9 @@ router.post('/login',
   });
 
 router.post('/adminlogin',
-	passport.authenticate('local', {successRedirect:'/users/admindash', failureRedirect:'/users/adminlogin',failureFlash: true}),
+	passport.authenticate('local', {successRedirect:'/users/admindash1', failureRedirect:'/users/adminlogin',failureFlash: true}),
 	function(req, res) {
-    res.redirect('/users/admindash');
+    res.redirect('/users/admindash1');
   });
 
 router.get('/logout', function(req,res) {
