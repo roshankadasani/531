@@ -10,6 +10,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
+var unirest = require('unirest');
 
 mongoose.connect('mongodb://cpsc473:webdev@ds053146.mlab.com:53146/473projects');
 var db = mongoose.connection;
@@ -91,6 +92,31 @@ app.get('/get-all-locations', function (req,res) {
     res.render('admindash2', {items: resultArray});
   });
 });
+
+app.get('/get-all-messages', function (req,res) {
+  db.collection('locations').find().toArray(function (err, resultArray) {
+    if (err) return console.log(err);
+    res.render('admindash3', {items: resultArray});
+  });
+});
+
+
+app.post('/analyze', function (req,res) {
+
+  var text = req.body.selectedText;
+  unirest.post("https://twinword-sentiment-analysis.p.mashape.com/analyze/")
+  .header("X-Mashape-Key", "2p1mVeOBYXmshNcac3hUpPJ16exLp1R3u3Ejsnc0clhJ4gflDX")
+  .header("Content-Type", "application/x-www-form-urlencoded")
+  .header("Accept", "application/json")
+  .send("text="+text)
+  .end(function (result) {
+    //console.log(result.status, result.headers, result.body);
+    console.log(result.body);
+    var sentiment = result.body;
+    res.render('admindash3', {sentiment, text});
+  });
+})
+
 
 var nodemailer = require('nodemailer');
 

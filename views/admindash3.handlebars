@@ -4,13 +4,68 @@
     <a href="/users/admindash" class="btn btn-primary btn-block">Home</a>
     <a href="/users/admindash1" class="btn btn-primary btn-block">Marker</a>
     <a href="/get-all-locations" class="btn btn-primary btn-block">Messages</a>
-    <a href="/users/admindash3" class="btn btn-primary btn-block">Sentiment Analysis</a>
+    <a href="/get-all-messages" class="btn btn-primary btn-block">Sentiment Analysis</a>
   </div>
   <div class="col-md-10">
     <center>
       <div id="main">
-
+        <form action="/analyze" method="POST">
+          <!-- <input type="text" name="userName"></input> -->
+          <select name="selectedText">
+            {{# each items }}
+              <option value="{{ this.location.message}}">{{ this.location.message}}</option>
+            {{/each}}
+          </select>
+          <p><button type="submit" class="btn btn-primary">Submit</button></p>
+        </form>
+        <p>Message: {{ text}} </p>
+        <p>Sentiment-type: {{ sentiment.type}} </p>
+        <p>Sentiment-score: {{ sentiment.score}} </p>
+        <!-- <canvas id="myChart" style="max-width: 50%; max-height: 50%;"></canvas> -->
       </div>
+      <!--
+      <p><a href="/analyze" class="btn btn-primary">Perform Sentiment Analysis</a></p> -->
+
     </center>
   </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script>
+<script>
+  var ctx = document.getElementById("myChart");
+  var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+              'rgba(255,99,132,1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+      }]
+  },
+  options: {
+      scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero:true
+              }
+          }]
+      }
+  }
+  });
+</script>
